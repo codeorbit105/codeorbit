@@ -1,0 +1,23 @@
+{
+  "name": "arikab-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@studio-freight/lenis": "1.0.28",
+    "framer-motion": "^10.12.16",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.9.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "vite": "^5.4.20"
+  }
+}
