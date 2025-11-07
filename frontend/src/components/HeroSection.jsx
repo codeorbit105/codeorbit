@@ -13,7 +13,7 @@ export default function HeroSection() {
   const loopedLogos = [...logos, ...logos];
 
   return (
-    <section className="hero-section hero">
+    <section className="hero-section">
       {/* 🎥 Background Video */}
       <video className="bg-video" autoPlay loop muted playsInline>
         <source src="/assets/videos/videoplayback.mp4" type="video/mp4" />
@@ -22,20 +22,22 @@ export default function HeroSection() {
       {/* Overlay */}
       <div className="overlay"></div>
 
-      {/* ✨ Hero Glow and Plate */}
+      {/* Glow & Plate */}
       <div className="hero-glow"></div>
       <div className="hero-plate"></div>
 
       {/* Hero Content */}
       <motion.div
-        className="hero-content hero-inner"
+        className="hero-content"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        <h1 className="hero-title grad-text">CODE ORBIT TECHNOLOGIES</h1>
+        <h1 className="hero-title grad-text">
+          CODE ORBIT <br /> TECHNOLOGIES
+        </h1>
         <p className="hero-subtitle">
-          Your Growth Partner and the Leading Digital Marketing Agency in
+          Your Growth Partner <br /> and the Leading Digital Marketing Agency in
           Lucknow.
         </p>
 
@@ -44,14 +46,14 @@ export default function HeroSection() {
         </a>
       </motion.div>
 
-      {/* Trusted Clients Section */}
+      {/* Trusted Section */}
       <div className="trusted-section">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Empowered by trusted partners who believe in our passion and
+          Empowered by trusted partners <br /> who believe in our passion and
           performance
         </motion.p>
 
@@ -77,7 +79,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* 💅 Responsive Styling */}
+      {/* 💅 Fully Responsive Styling */}
       <style>{`
         /* ===== HERO BASE ===== */
         .hero-section {
@@ -92,6 +94,7 @@ export default function HeroSection() {
           overflow: hidden;
           padding: 0 1rem;
           font-family: 'Poppins', sans-serif;
+          box-sizing: border-box;
         }
 
         /* 🎥 Video Background */
@@ -121,15 +124,22 @@ export default function HeroSection() {
           z-index: 5;
           max-width: 900px;
           padding: 0 1rem;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
         }
 
+        /* ===== HERO TITLE ===== */
         .hero-title {
-          font-size: clamp(2rem, 6vw, 5.5rem);
+          font-size: clamp(2rem, 6vw, 5rem);
           font-weight: 800;
           text-transform: uppercase;
-          letter-spacing: 4px;
-          text-shadow: 0 0 25px rgba(0,180,255,0.4), 0 0 60px rgba(0,80,255,0.2);
+          letter-spacing: 2px;
+          line-height: 1.15;
           margin-bottom: 1rem;
+          text-shadow: 0 0 20px rgba(0, 180, 255, 0.4);
+          white-space: normal;
+          word-break: break-word;
+          hyphens: auto;
         }
 
         .grad-text {
@@ -138,6 +148,7 @@ export default function HeroSection() {
           -webkit-text-fill-color: transparent;
         }
 
+        /* ===== HERO SUBTITLE ===== */
         .hero-subtitle {
           font-size: clamp(1rem, 2vw, 1.3rem);
           color: #d9e9ff;
@@ -145,6 +156,11 @@ export default function HeroSection() {
           margin: 0 auto 2rem;
           line-height: 1.6;
           max-width: 720px;
+          text-align: center;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          white-space: normal;
+          transition: all 0.3s ease;
         }
 
         /* CTA */
@@ -172,7 +188,7 @@ export default function HeroSection() {
           left: -200px;
           width: 700px;
           height: 700px;
-          background: radial-gradient(circle, rgba(59, 157, 255, 0.35) 0%, rgba(0, 0, 0, 0) 75%);
+          background: radial-gradient(circle, rgba(59, 157, 255, 0.35) 0%, transparent 75%);
           filter: blur(120px);
           z-index: 1;
           animation: floatGlow 10s ease-in-out infinite alternate;
@@ -212,10 +228,16 @@ export default function HeroSection() {
         }
 
         .trusted-section p {
-          font-size: 1.1rem;
+          font-size: clamp(1rem, 1.5vw, 1.1rem);
           color: #b0c4de;
           max-width: 800px;
-          margin: 0 auto 2.5rem;
+          margin: 0 auto 2rem;
+          text-align: center;
+          line-height: 1.6;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          white-space: normal;
+          transition: all 0.3s ease;
         }
 
         .logo-slider {
@@ -233,31 +255,44 @@ export default function HeroSection() {
           transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        /* =============== RESPONSIVE BREAKPOINTS =============== */
-
         /* 📱 Phones */
         @media (max-width: 576px) {
           .hero-section {
             padding: 0 1.2rem;
           }
+
+          .hero-title {
+            font-size: clamp(1.6rem, 8vw, 2.4rem);
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: 1.5px;
+            text-align: center;
+          }
+
           .hero-subtitle {
-            margin-bottom: 1.8rem;
+            font-size: clamp(0.85rem, 3.5vw, 1rem);
+            font-weight: 400;
+            line-height: 1.45;
+            opacity: 0.95;
+            margin-bottom: 1.4rem;
+            max-width: 90%;
+            padding: 0 0.5rem;
           }
+
           .hero-cta {
-            padding: 0.8rem 1.8rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            padding: 0.75rem 1.6rem;
           }
-          .hero-glow {
-            width: 400px;
-            height: 400px;
-            filter: blur(80px);
+
+          .trusted-section p {
+            font-size: clamp(0.8rem, 3.5vw, 0.95rem);
+            line-height: 1.5;
+            opacity: 0.9;
+            padding: 0 1rem;
+            max-width: 95%;
+            text-align: center;
           }
-          .hero-plate {
-            width: 180px;
-            height: 180px;
-            right: 5%;
-            top: 35%;
-          }
+
           .logo-img {
             width: 90px;
           }
@@ -266,13 +301,10 @@ export default function HeroSection() {
         /* 📲 Tablets */
         @media (min-width: 577px) and (max-width: 992px) {
           .hero-title {
-            letter-spacing: 3px;
+            font-size: clamp(2.5rem, 5vw, 3rem);
           }
-          .hero-plate {
-            width: 260px;
-            height: 260px;
-            right: 6%;
-            top: 28%;
+          .hero-subtitle {
+            font-size: 1.1rem;
           }
           .trusted-section p {
             font-size: 1rem;
@@ -287,15 +319,8 @@ export default function HeroSection() {
           .hero-subtitle {
             font-size: 1.4rem;
           }
-          .logo-img {
-            width: 140px;
-          }
-        }
-
-        /* 🖥️ Ultra-Wide */
-        @media (min-width: 1600px) {
-          .hero-content {
-            max-width: 1000px;
+          .trusted-section p {
+            font-size: 1.15rem;
           }
         }
       `}</style>
