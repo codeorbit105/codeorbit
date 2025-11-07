@@ -7,7 +7,7 @@ export default function Start() {
   const form = useRef();
 
   // ✅ EmailJS + Backend setup
-  const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL = "https://codeorbit-rqva.onrender.com";
   const EMAILJS_SERVICE_ID = "service_9wy53h9";
   const EMAILJS_TEMPLATE_ID = "template_dl28r05";
   const EMAILJS_PUBLIC_KEY = "uWMq668TupgP9942q";
